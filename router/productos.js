@@ -36,7 +36,7 @@ router.put('/productos/:id', (req, res) => {
   let id = +req.params.id
   let body = req.body
   let index = arr.findIndex((st) => st.id === id)
-  let updateProduct = {id : id, ...body}
+  let updateProduct = {...body, id : id}
   arr[index] = updateProduct
   res.send(updateProduct)
 })
